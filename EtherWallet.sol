@@ -4,11 +4,11 @@ contract EtherWallet{
     address owner;
     
     constructor() public{
-        owner=msg.sender;
+        owner = msg.sender;
     }
     
     modifier ownerOnly(){
-        require(msg.sender == owner);
+        require(msg.sender == owner,"Owner is only allowed");
         _;
     }
     

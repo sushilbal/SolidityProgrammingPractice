@@ -54,7 +54,7 @@ contract Ballot {
         sender.voted = true;
         sender.vote = toProposal;   
         proposals[toProposal].voteCount += sender.weight;
-        if (now > (startTime+ 30 seconds)) {stage = Stage.Done; votingCompleted();}        
+        if (now > (startTime+ 30 seconds)) {stage = Stage.Done; emit votingCompleted();}        
         
     }
 

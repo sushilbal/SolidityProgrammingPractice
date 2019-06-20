@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.0;
 contract Auction {
     
     // Data
@@ -27,7 +27,7 @@ contract Auction {
     
     //functions
 
-    function Auction() public payable{    //constructor
+     constructor() public payable{    //constructor
                 
         //Part 1 Task 1. Initialize beneficiary with address of smart contract’s owner
         //Hint. In the constructor,"msg.sender" is the address of the owner.
@@ -110,7 +110,11 @@ contract Auction {
     //Hint : Use require to validate if "msg.sender" is equal to the "beneficiary".
     modifier onlyOwner {
         // ** Start code here. 2 lines approximately. **
+<<<<<<< HEAD
         
+=======
+        require(msg.sender == beneficiary);
+>>>>>>> 254e051861a2488a264270d814a8a8a12a4e6f2a
         _;
         //** End code here. **
     }

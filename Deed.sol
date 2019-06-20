@@ -1,9 +1,10 @@
 pragma solidity ^0.5.0;
 
 contract Deed{
-    address lawyer;
-    address payable beneficiary;
-    uint timeToExecute;
+    //enum toStart { 'NOW', 'WAIT' };
+    address public lawyer;
+    address payable public beneficiary;
+    uint public timeToExecute;
 
     constructor (address _lawyer,address payable _beneficiary) public payable{
         timeToExecute = now + 1 minutes;
@@ -32,4 +33,8 @@ contract Deed{
     function executeTheDeed() public payable lawyerOnly onlyOnTime{
         beneficiary.transfer(address(this).balance);
     } 
+
+    /*function withdraw() public lawyerOnly onlyOnTime{
+        beneficiary.transfer(address(this).balance);
+    }*/
 }
